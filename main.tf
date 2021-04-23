@@ -85,7 +85,6 @@ module "frontend" {
   unique_id                = var.vpc_name
   ibm_is_vpc_id            = module.vpc.vpc_id
   ibm_is_resource_group_id = data.ibm_resource_group.all_rg.id
-  frontend_count           = local.frontend_count
   profile                  = var.profile
   ibm_is_image_id          = data.ibm_is_image.os.id
   ibm_is_ssh_key_id        = data.ibm_is_ssh_key.sshkey.id
