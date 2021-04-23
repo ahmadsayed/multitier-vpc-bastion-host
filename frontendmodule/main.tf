@@ -79,7 +79,7 @@ resource "ibm_is_lb_pool_member" "webapptier-lb-pool-member-zone1" {
   count          = var.frontend_count
   lb             = ibm_is_lb.webapptier-lb.id
   pool           = element(split("/", ibm_is_lb_pool.webapptier-lb-pool.id), 1)
-  port           = "8080"
+  port           = "80"
   target_address = ibm_is_instance.frontend-server[count.index].primary_network_interface[0].primary_ipv4_address
   depends_on     = [ibm_is_lb_pool.webapptier-lb-pool]
 }
