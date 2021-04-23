@@ -94,6 +94,7 @@ module "frontend" {
   bastion_subnet_CIDR      = var.bastion_cidr
   pub_repo_egress_cidr     = local.pub_repo_egress_cidr
   app_backend_sg_id        = module.backend.security_group_id
+  frontend_count           = var.front_count
 }
 
 module "backend" {
