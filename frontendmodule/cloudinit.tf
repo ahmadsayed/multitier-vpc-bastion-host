@@ -10,6 +10,8 @@ package_upgrade: false
 packages:
 - httpd
 runcmd:
+- 'yum update'
+- 'yum install httpd -y'
 - 'cp /usr/share/httpd/noindex/index.html /var/www/html' 
 - 'systemctl start httpd'
 final_message: "The system is finally up, after $UPTIME seconds"
